@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-brand"><H1>X Mart</H1></div>
+        <button class="search"><i class="fa-solid fa-search" onclick="searchbox()"></i></button>
+        <div class="nav-item"><p id="count"><i class="fa-solid fa-cart-shopping"></i><span>0</span></p></div>
+        <form class="searchbox" id="searchbox" onsubmit="performSearch(event)">
+            <input type="text" placeholder="Search here . . ." id="input-box">
+            <button type="submit" class="searchbutton"><i class="fa-solid fa-search"></i></button>
+            <button type="button" class="searchbutton" onclick="searchboxclose()"><i class="fa-solid fa-xmark"></i></button><br>
+            <div class="result-box" id="result-box">
+                <ul></ul>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <div id="root"></div>
+        <div class="sidebar">
+            <div class="head"><p>My Cart</p></div>
+            <div id="cartitem">Your cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">Rs 0.00</h2>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/cart.js' %}"></script>
+</body>
+</html>         
